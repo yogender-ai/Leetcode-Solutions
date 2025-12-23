@@ -9,16 +9,15 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/github/stars/yogender-ai/Leetcode-Solutions?style=for-the-badge&logo=github&color=gold&label=REPO%20STARS" />
-    <img src="https://img.shields.io/github/last-commit/yogender-ai/Leetcode-Solutions?style=for-the-badge&logo=git&color=22D3EE&label=LAST%20CONQUEST" />
-    <img src="https://img.shields.io/badge/SOLUTIONS-AUTO-brightgreen?style=for-the-badge&logo=leetcode" />
+    <img src="https://img.shields.io/github/stars/yogender-ai/Leetcode-Solutions?style=for-the-badge&logo=github&color=gold&label=LEGENDARY%20STARS&cacheSeconds=0" />
+    <img src="https://img.shields.io/github/last-commit/yogender-ai/Leetcode-Solutions?style=for-the-badge&logo=git&color=22D3EE&label=LAST%20CONQUEST&cacheSeconds=0" />
 </p>
 
 ---
 
 ## 📊 REPOSITORY INSIGHTS
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=yogender-ai&repo=Leetcode-Solutions&theme=radical&border_radius=15" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=yogender-ai&repo=Leetcode-Solutions&theme=radical&border_radius=15&cache_seconds=0" />
 </p>
 
 ---
