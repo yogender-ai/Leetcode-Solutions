@@ -1,7 +1,7 @@
 # ⚔️ LEETCODE WARRIOR COMMAND CENTER ⚔️
 
 <p align="center">
-  <img src="https://github.com/yogender-ai/Leetcode-Solutions/blob/main/brain.gif?raw=true" width="300" height="300" style="border-radius: 50%;" alt="Animated Brain" />
+  <img src="https://github.com/yogender-ai/Leetcode-Solutions/blob/main/Brain%20Network.gif?raw=true" width="300" alt="Brain Network Animation" />
 </p>
 
 <p align="center">
@@ -9,18 +9,16 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/github/stars/yogender-ai/Leetcode-Solutions?style=for-the-badge&logo=github&color=gold&label=LEGENDARY%20STARS&labelColor=black" />
-    <img src="https://img.shields.io/github/last-commit/yogender-ai/Leetcode-Solutions?style=for-the-badge&logo=git&color=22D3EE&label=LAST%20CONQUEST&labelColor=black" />
-    <img src="https://img.shields.io/badge/SOLUTIONS-AUTO-brightgreen?style=for-the-badge&logo=leetcode&labelColor=black" />
+    <img src="https://img.shields.io/github/stars/yogender-ai/Leetcode-Solutions?style=for-the-badge&logo=github&color=gold&label=REPO%20STARS" />
+    <img src="https://img.shields.io/github/last-commit/yogender-ai/Leetcode-Solutions?style=for-the-badge&logo=git&color=22D3EE&label=LAST%20CONQUEST" />
+    <img src="https://img.shields.io/badge/SOLUTIONS-AUTO-brightgreen?style=for-the-badge&logo=leetcode" />
 </p>
 
 ---
 
-## 📊 REAL-TIME STATS DASHBOARD
+## 📊 REPOSITORY INSIGHTS
 <p align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=yogender-ai&show_icons=true&theme=radical&border_radius=15&bg_color=0d1117" />
-  
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yogender-ai&layout=compact&theme=radical&border_radius=15&bg_color=0d1117&hide=html,css" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=yogender-ai&repo=Leetcode-Solutions&theme=radical&border_radius=15" />
 </p>
 
 ---
