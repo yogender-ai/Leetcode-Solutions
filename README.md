@@ -1,58 +1,101 @@
-# ⚔️ LEETCODE WARRIOR COMMAND CENTER ⚔️
+# LeetCode Solutions — Data Structures & Algorithms (C++)
 
 <p align="center">
-  <img src="https://github.com/yogender-ai/Leetcode-Solutions/blob/main/Brain%20Network.gif?raw=true" width="300" alt="Brain Network Animation" />
+  <img src="https://github.com/yogender-ai/Leetcode-Solutions/blob/main/Brain%20Network.gif?raw=true" width="260" alt="DSA Visualization" />
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=40&duration=3000&pause=1000&color=FF6B8B&center=true&vCenter=true&width=800&height=80&lines=%F0%9F%9A%80+YOGENDER's+DSA+JOURNEY;CONSISTENCY+IS+KEY;ALGORITHMS+%26+DATA+STRUCTURES" alt="Typing Animation" />
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/github/stars/yogender-ai/Leetcode-Solutions?style=for-the-badge&logo=github&color=gold&label=LEGENDARY%20STARS&cacheSeconds=0" />
-    <img src="https://img.shields.io/github/last-commit/yogender-ai/Leetcode-Solutions?style=for-the-badge&logo=git&color=22D3EE&label=LAST%20CONQUEST&cacheSeconds=0" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=4FC3F7&center=true&vCenter=true&width=900&height=70&lines=Consistent+DSA+Practice+in+C%2B%2B;Focused+on+Problem+Solving+and+Core+Concepts;Interview-Oriented+Approach" />
 </p>
 
 ---
 
-## 📊 REPOSITORY INSIGHTS
+## 📌 Overview
+
+This repository contains my **LeetCode solutions implemented in C++**, organized by topic and difficulty.  
+The goal of this repository is to build **strong fundamentals in Data Structures and Algorithms** through **consistent practice** and **clean, well-explained code**.
+
+### Key Objectives
+- Strengthen algorithmic thinking
+- Improve problem-solving efficiency
+- Prepare systematically for technical interviews
+- Maintain long-term consistency
+
+This repository emphasizes **learning depth and clarity**, not shortcuts.
+
+---
+
+## 📊 Current Progress (Manually Tracked)
+
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=yogender-ai&repo=Leetcode-Solutions&theme=radical&border_radius=15&cache_seconds=0" />
+  <img src="https://img.shields.io/badge/Total%20Problems-1-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Current%20Streak-1%20Day-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Primary%20Language-C++-00599C?style=for-the-badge&logo=cplusplus" />
 </p>
 
 ---
 
-## 🏆 RANK EVOLUTION SYSTEM
-| Rank | Requirement | Progress | Status |
-| :--- | :--- | :--- | :--- |
-| 🌱 **Novice** | 1+ Solutions | 100% | ✅ UNLOCKED |
-| 🏹 **Apprentice** | 50+ Solutions | 2% | ⚔️ IN PROGRESS |
-| 🔥 **Slayer** | 100+ Solutions | 0% | 🔒 LOCKED |
+## 🧩 Problem Distribution by Topic
+
+| Topic | Problems Solved |
+|------|-----------------|
+| Hashing | 1 |
+| Arrays | 0 |
+| Strings | 0 |
+| Linked List | 0 |
+| Stack & Queue | 0 |
+| Trees | 0 |
+| Graphs | 0 |
+| Dynamic Programming | 0 |
+
+**Total Problems Solved:** `1`
 
 ---
 
-## 🗂️ RECENT SOLUTIONS LOG
-| Date | Problem | Difficulty | Solution |
-| :--- | :--- | :--- | :--- |
-| Dec 2024 | 387. First Unique Character | 🟢 Easy | [View Code](./Hashing/387.%20First%20Unique%20Character.cpp) |
+## 📈 Learning Milestones
+
+| Level | Criteria | Status |
+|-----|---------|--------|
+| Beginner | 1+ problems solved | ✅ Completed |
+| Intermediate | 50+ problems solved | ⏳ In Progress |
+| Advanced | 100+ problems solved | ⏳ Pending |
+| Expert | 300+ problems solved | ⏳ Pending |
+
+> Progress is updated based on solved problems only.
 
 ---
 
-## 📈 STAR HISTORY
-<div align="center">
-  <a href="https://star-history.com/#yogender-ai/Leetcode-Solutions">
-    <img src="https://api.star-history.com/svg?repos=yogender-ai/Leetcode-Solutions&theme=dark" width="90%" alt="Star History Chart" />
-  </a>
-</div>
+## 🗂️ Recent Submissions
+
+| Date | Problem | Topic | Difficulty | Link |
+|-----|--------|------|-----------|-----|
+| Dec 23, 2024 | 387. First Unique Character in a String | Hashing | Easy | [View Solution](./Hashing/387.%20First%20Unique%20Character.cpp) |
 
 ---
 
-## 🚀 HOW TO LOG NEW SOLUTIONS
-1. **Solve** a new LeetCode problem in C++.
-2. **Create** file in appropriate folder: `/Hashing/`, `/Arrays/`, etc.
-3. **Commit** with message: `Add: [Problem Name]`.
-4. **Watch** your stats grow automatically! 📈
+## 🧠 Coding Standards Followed
 
-<p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" />
-</p>
+- Clean and readable C++ code
+- Optimal time and space complexity
+- Appropriate use of STL
+- Meaningful variable naming
+- Inline comments where logic is non-trivial
+
+Each solution is written with **interview clarity** in mind.
+
+---
+
+## 📂 Repository Structure
+
+```txt
+Leetcode-Solutions/
+│
+├── Arrays/
+├── Hashing/
+├── Strings/
+├── LinkedList/
+├── StackQueue/
+├── Trees/
+├── Graphs/
+├── DP/
+└── README.md
