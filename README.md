@@ -1,67 +1,61 @@
-<p align="center">
-  <img src="https://assets.leetcode.com/static_assets/public/webpack_bundles/images/logo-dark.e99485d9b.svg" alt="LeetCode Logo" width="200">
-</p>
-
-<h1 align="center">⚡ LeetCode Solutions in C++</h1>
+# ⚔️ LEETCODE WARRIOR COMMAND CENTER ⚔️
 
 <p align="center">
-A curated collection of LeetCode problem solutions implemented in C++, with auto-updating progress tracking, visual analytics, and structured learning path.
+  <img src="https://github.com/yogender-ai/Leetcode-Solutions/blob/main/brain.gif?raw=true" width="300" height="300" style="border-radius: 50%;" alt="Animated Brain" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/C++-17-blue?logo=c%2B%2B">
-  <img src="https://img.shields.io/badge/Problems-Solved-green?logo=leetcode">
-  <img src="https://img.shields.io/badge/Daily-Streak-orange?logo=firebase">
-  <img src="https://img.shields.io/badge/Auto-Update-success">
-  <img src="https://img.shields.io/github/last-commit/<YOUR_USERNAME>/<YOUR_REPO>">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=40&duration=3000&pause=1000&color=FF6B8B&center=true&vCenter=true&width=800&height=80&lines=%F0%9F%9A%80+YOGENDER's+DSA+JOURNEY;CONSISTENCY+IS+KEY;ALGORITHMS+%26+DATA+STRUCTURES" alt="Typing Animation" />
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/github/stars/yogender-ai/Leetcode-Solutions?style=for-the-badge&logo=github&color=gold&label=LEGENDARY%20STARS&labelColor=black" />
+    <img src="https://img.shields.io/github/last-commit/yogender-ai/Leetcode-Solutions?style=for-the-badge&logo=git&color=22D3EE&label=LAST%20CONQUEST&labelColor=black" />
+    <img src="https://img.shields.io/badge/SOLUTIONS-AUTO-brightgreen?style=for-the-badge&logo=leetcode&labelColor=black" />
 </p>
 
 ---
 
-## 📊 Live Dashboard
-
-<div align="center">
+## 📊 REAL-TIME STATS DASHBOARD
+<p align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=yogender-ai&show_icons=true&theme=radical&border_radius=15&bg_color=0d1117" />
   
-### 🏆 Current Progress
-![Progress](https://progress-bar.dev/<TOTAL>/?scale=500&title=Problems&width=600&color=brightgreen)
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yogender-ai&layout=compact&theme=radical&border_radius=15&bg_color=0d1117&hide=html,css" />
+</p>
 
-### ⭐ Solutions Count
-<div style="font-size: 32px; margin: 20px 0;">
-<SOLUTION_STARS>
-</div>
+---
 
-### 🔥 Coding Streak
-<div style="display: inline-block; padding: 10px 20px; background: linear-gradient(45deg, #ff6b6b, #ffa500); border-radius: 20px; margin: 10px;">
-  <strong><STREAK> days</strong> 🔥
-</div>
+## 🏆 RANK EVOLUTION SYSTEM
+| Rank | Requirement | Progress | Status |
+| :--- | :--- | :--- | :--- |
+| 🌱 **Novice** | 1+ Solutions | 100% | ✅ UNLOCKED |
+| 🏹 **Apprentice** | 50+ Solutions | 2% | ⚔️ IN PROGRESS |
+| 🔥 **Slayer** | 100+ Solutions | 0% | 🔒 LOCKED |
 
+---
+
+## 🗂️ RECENT SOLUTIONS LOG
+| Date | Problem | Difficulty | Solution |
+| :--- | :--- | :--- | :--- |
+| Dec 2024 | 387. First Unique Character | 🟢 Easy | [View Code](./Hashing/387.%20First%20Unique%20Character.cpp) |
+
+---
+
+## 📈 STAR HISTORY
+<div align="center">
+  <a href="https://star-history.com/#yogender-ai/Leetcode-Solutions">
+    <img src="https://api.star-history.com/svg?repos=yogender-ai/Leetcode-Solutions&theme=dark" width="90%" alt="Star History Chart" />
+  </a>
 </div>
 
 ---
 
-## 🗂️ Repository Structure (Auto-Detected)
-<details>
-<summary>📁 Click to view all files</summary>
-</details>
+## 🚀 HOW TO LOG NEW SOLUTIONS
+1. **Solve** a new LeetCode problem in C++.
+2. **Create** file in appropriate folder: `/Hashing/`, `/Arrays/`, etc.
+3. **Commit** with message: `Add: [Problem Name]`.
+4. **Watch** your stats grow automatically! 📈
 
----
-
-## 📈 Problem Categories
-
-| Category | Solved | Total | Progress |
-|----------|--------|-------|----------|
-| **Arrays** | <ARRAY_COUNT> | 80 | <ARRAY_PROGRESS> |
-| **Strings** | <STRING_COUNT> | 60 | <STRING_PROGRESS> |
-| **Dynamic Programming** | <DP_COUNT> | 70 | <DP_PROGRESS> |
-| **Trees** | <TREE_COUNT> | 50 | <TREE_PROGRESS> |
-| **Graphs** | <GRAPH_COUNT> | 40 | <GRAPH_PROGRESS> |
-| **Backtracking** | <BACKTRACK_COUNT> | 30 | <BACKTRACK_PROGRESS> |
-
----
-
-## 🚀 Quick Start
-
-### 1. Clone Repository
-```bash
-git clone https://github.com/<yogender-ai>/<Leetcode-Solutions>.git
-cd <Leetcode-Solutions>
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" />
+</p>
