@@ -3,116 +3,158 @@ import os
 import glob
 import json
 from datetime import datetime
-import re
+from collections import defaultdict
 
-def count_cpp_files():
-    """Count all .cpp files in the repository"""
-    cpp_files = glob.glob('**/*.cpp', recursive=True)
-    return len(cpp_files)
-
-def count_by_category():
-    """Count files by folder (category)"""
-    categories = {}
-    
-    # Get all directories
-    for root, dirs, files in os.walk('.'):
-        # Skip hidden directories
-        dirs[:] = [d for d in dirs if not d.startswith('.')]
+class LeetCodeStats:
+    def __init__(self):
+        self.total_solutions = 0
+        self.categories = defaultdict(int)
+        self.all_files = []
         
-        for dir_name in dirs:
-            if dir_name not in ['.git', '__pycache__']:
-                cpp_count = len(glob.glob(f'{dir_name}/*.cpp'))
-                if cpp_count > 0:
-                    categories[dir_name] = cpp_count
-    
-    return categories
-
-def generate_stars(count):
-    """Generate star emojis"""
-    stars = '⭐' * min(count, 50)
-    if count > 50:
-        stars += f' (+{count-50})'
-    return stars
-
-def update_readme():
-    """Update README.md with current stats"""
-    with open('README.md', 'r', encoding='utf-8') as f:
-        content = f.read()
-    
-    total = count_cpp_files()
-    categories = count_by_category()
-    
-    # Update total count
-    content = re.sub(r'Progress Stars: <span id="star-count">\d+</span>', 
-                    f'Progress Stars: <span id="star-count">{total}</span>', content)
-    
-    # Update stars display
-    stars = generate_stars(total)
-    content = re.sub(r'id="stars-display">.*?</div>', 
-                    f'id="stars-display">{stars}</div>', content)
-    
-    # Update progress table
-    for category, count in categories.items():
-        cat_lower = category.lower().replace(' ', '-')
-        content = re.sub(rf'id="{cat_lower}-count">\d+</td>', 
-                        f'id="{cat_lower}-count">{count}</td>', content)
+    def scan_repository(self):
+        """Scan for all C++ solution files"""
+        # Get all .cpp files
+        cpp_files = glob.glob("**/*.cpp", recursive=True)
+        self.total_solutions = len(cpp_files)
+        self.all_files = cpp_files
         
-        # Update progress bars (assuming target of 50)
-        progress = min((count / 50) * 100, 100)
-        content = re.sub(rf'id="{cat_lower}-bar" style="width: \d+%"', 
-                        f'id="{cat_lower}-bar" style="width: {progress}%"', content)
-    
-    # Update last updated time
-    now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    content = re.sub(r'Last Updated: <span id="last-updated">.*?</span>', 
-                    f'Last Updated: <span id="last-updated">{now}</span>', content)
-    
-    # Update badges
-    content = re.sub(r'Progress-\d+%2F500', f'Progress-{total}%2F500', content)
-    content = re.sub(r'Stars-.*?-yellow', f'Stars-{generate_stars(min(total, 5))}-yellow', content)
-    
-    with open('README.md', 'w', encoding='utf-8') as f:
-        f.write(content)
-    
-    print(f"✅ Updated! Total solutions: {total}")
-    for cat, cnt in categories.items():
-        print(f"   {cat}: {cnt} solutions")
-    
-    # Update streak
-    update_streak()
-
-def update_streak():
-    """Update daily streak"""
-    today = datetime.now().strftime('%Y-%m-%d')
-    
-    if not os.path.exists('.streak'):
-        with open('.streak', 'w') as f:
-            f.write(today + '\n1')
-        streak = 1
-    else:
-        with open('.streak', 'r') as f:
-            lines = f.readlines()
-            last_date = lines[0].strip()
-            streak = int(lines[1].strip())
-            
-            if last_date == today:
-                # Already updated today
-                pass
+        # Categorize by folder
+        for file_path in cpp_files:
+            folder = os.path.dirname(file_path)
+            if folder:
+                self.categories[folder] += 1
             else:
-                # New day
-                yesterday = (datetime.now() - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
-                if last_date == yesterday:
-                    streak += 1
-                else:
-                    streak = 1
-                
-                with open('.streak', 'w') as f:
-                    f.write(today + '\n' + str(streak))
+                self.categories["root"] += 1
+        
+        return self
     
-    print(f"🔥 Current streak: {streak} days")
-    return streak
+    def generate_stars(self):
+        """Generate star visualization"""
+        stars_count = min(self.total_solutions // 10, 20)
+        return "⭐" * stars_count + f" ({self.total_solutions})"
+    
+    def generate_structure(self):
+        """Generate folder structure tree"""
+        structure_lines = []
+        
+        def build_tree(path, prefix=""):
+            items = []
+            try:
+                items = os.listdir(path)
+            except:
+                return
+            
+            items = [i for i in items if not i.startswith('.')]
+            items.sort()
+            
+            for i, item in enumerate(items):
+                item_path = os.path.join(path, item)
+                is_last = (i == len(items) - 1)
+                
+                if os.path.isdir(item_path):
+                    structure_lines.append(f"{prefix}{'└── ' if is_last else '├── '}📂 {item}/")
+                    build_tree(item_path, prefix + ("    " if is_last else "│   "))
+                elif item.endswith('.cpp'):
+                    structure_lines.append(f"{prefix}{'└── ' if is_last else '├── '}📄 {item}")
+        
+        structure_lines.append("LeetCode-CPP/")
+        build_tree(".")
+        return "\n".join(structure_lines)
+    
+    def generate_file_list(self):
+        """Generate detailed file list"""
+        file_lines = []
+        for file_path in sorted(self.all_files):
+            size = os.path.getsize(file_path)
+            modified = datetime.fromtimestamp(os.path.getmtime(file_path)).strftime('%Y-%m-%d')
+            file_lines.append(f"{file_path:<40} | {size:>6} bytes | {modified}")
+        
+        return "\n".join(file_lines) if file_lines else "No .cpp files found"
+    
+    def generate_progress_bars(self):
+        """Generate progress bars for categories"""
+        bars = {}
+        targets = {
+            "Arrays": 80, "Strings": 60, "Dynamic_Programming": 70,
+            "Trees": 50, "Graphs": 40, "Backtracking": 30
+        }
+        
+        for category, target in targets.items():
+            count = self.categories.get(category, 0)
+            percent = min(int((count / target) * 100), 100)
+            bar = "█" * (percent // 5) + "░" * (20 - (percent // 5))
+            bars[category] = {
+                "count": count,
+                "bar": bar,
+                "percent": percent
+            }
+        
+        return bars
+    
+    def update_readme(self):
+        """Update README.md with current stats"""
+        with open("README.md", "r", encoding="utf-8") as f:
+            content = f.read()
+        
+        # Replace placeholders
+        replacements = {
+            "<TOTAL>": str(self.total_solutions),
+            "<SOLUTION_STARS>": self.generate_stars(),
+            "<FOLDER_STRUCTURE>": self.generate_structure(),
+            "<FILE_LIST>": self.generate_file_list(),
+            "<STREAK>": self.calculate_streak(),
+        }
+        
+        # Add category counts
+        bars = self.generate_progress_bars()
+        for category, data in bars.items():
+            key = f"<{category.upper()}_COUNT>"
+            if key in content:
+                content = content.replace(key, str(data["count"]))
+            key = f"<{category.upper()}_PROGRESS>"
+            if key in content:
+                content = content.replace(key, f"{data['bar']} {data['percent']}%")
+        
+        for old, new in replacements.items():
+            content = content.replace(old, new)
+        
+        # Update last commit badge
+        last_commit = datetime.now().strftime("%Y-%m-%d")
+        content = content.replace("<LAST_COMMIT>", last_commit)
+        
+        with open("README.md", "w", encoding="utf-8") as f:
+            f.write(content)
+        
+        print(f"✅ Updated! Total solutions: {self.total_solutions}")
+        print("📊 Category breakdown:")
+        for cat, count in sorted(self.categories.items()):
+            if cat != "root":
+                print(f"   {cat}: {count}")
+    
+    def calculate_streak(self):
+        """Calculate coding streak from git commits"""
+        try:
+            # Try to get commit history
+            import subprocess
+            result = subprocess.run(
+                ["git", "log", "--oneline", "--format=%cd", "--date=short"],
+                capture_output=True, text=True
+            )
+            dates = result.stdout.strip().split('\n')
+            
+            if dates:
+                unique_dates = set(dates)
+                return str(len(unique_dates))
+        except:
+            pass
+        
+        return "7"  # Default value
 
-if __name__ == '__main__':
-    print("🔄 Updating README with current progress...")
-    update_readme()
-    print("🎉 Done! View your updated README.md")
+def main():
+    print("📡 Scanning repository for LeetCode solutions...")
+    stats = LeetCodeStats().scan_repository()
+    stats.update_readme()
+    print("🎉 README updated successfully!")
+
+if __name__ == "__main__":
+    main()
